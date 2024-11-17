@@ -7,8 +7,12 @@
 # Ideal para pessoas que usam Xorg e teclados sem suporte nativo a LEDs.
 #####################################################################
 
-# Caminho do arquivo de log em uma partição padrão para logs no Linux
-LOG_FILE="/var/log/keyboard_led_toggle.log"
+# Caminho do arquivo de log na home do usuário
+LOG_DIR="$HOME/.log"
+LOG_FILE="$LOG_DIR/keyboard_led_toggle.log"
+
+# Garante que o diretório de log exista
+mkdir -p "$LOG_DIR"
 
 # Requisito: Verifica se o sistema está usando Xorg
 if ! pgrep -x "Xorg" &> /dev/null; then
@@ -18,7 +22,6 @@ fi
 
 # Verifica se o arquivo de log existe, se não, cria e inicializa com 0
 if [ ! -f "$LOG_FILE" ]; then
-    sudo touch "$LOG_FILE" && sudo chmod 666 "$LOG_FILE"
     echo 0 > "$LOG_FILE"
 fi
 
