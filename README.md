@@ -5,14 +5,13 @@ Um script Bash simples para ativar ou desativar o LED de teclados genéricos no 
 ## Recursos
 
 - **Alternância de LED:** Ative ou desative os LEDs do teclado com apenas um comando.
-- **Logs:** Armazena o estado atual no log localizado em `/var/log/keyboard_led_toggle.log`.
+- **Logs:** Armazena o estado atual no log localizado em `~/.log/keyboard_led_toggle.log`.
 - **Integração com XFCE:** Pode ser facilmente configurado como um atalho de teclado.
 
 ## Requisitos
 
 - **Xorg:** Este script depende do servidor gráfico Xorg.
 - **xset:** Ferramenta necessária para controlar o LED do teclado.
-- **Permissões de root:** Para criar e gerenciar o arquivo de log em `/var/log`.
 
 ## Instalação
 
@@ -21,4 +20,4 @@ Um script Bash simples para ativar ou desativar o LED de teclados genéricos no 
    git clone https://github.com/seu-usuario/toggle-led.git
    cd toggle-led
    chmod +x toggle_led.sh
-   sudo ./toggle_led.sh
+   ./toggle_led.sh
